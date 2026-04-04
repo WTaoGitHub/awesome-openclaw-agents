@@ -5,6 +5,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![Stars](https://img.shields.io/github/stars/mergisi/awesome-openclaw-agents?style=social)](https://github.com/mergisi/awesome-openclaw-agents)
 [![Agents](https://img.shields.io/badge/agents-187-blueviolet)](agents/)
+[![Works with Ollama Cloud](https://img.shields.io/badge/Ollama_Cloud-Ready-00C853?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48L3N2Zz4=)](https://ollama.com)
 
 > A curated collection of **187 production-ready AI agent templates** for the OpenClaw ecosystem. Every template is a copy-paste ready `SOUL.md` file.
 
@@ -48,6 +49,7 @@ Pick a template. Customize the config. Get a full deploy package. No terminal re
 - [Tools](#tools)
 - [Security](#security)
 - [Tutorials & Guides](#tutorials--guides)
+- [Cost Optimization & Multi-Provider](#-cost-optimization--multi-provider)
 - [Submit Your Agent](#submit-your-agent)
 - [Community](#community)
 
@@ -646,6 +648,58 @@ Learn how to build and deploy agents.
 - [OpenClaw vs memU](https://crewclaw.com/blog/openclaw-vs-memu) - Long-term memory AI
 - [PicoClaw vs OpenClaw](https://crewclaw.com/blog/picoclaw-vs-openclaw) - Ultra-minimal alternative
 - [OpenClaw GitHub Repository Guide](https://crewclaw.com/blog/openclaw-ai-agent-github-guide) - The 250K-star repo explained
+
+---
+
+## 💰 Cost Optimization & Multi-Provider
+
+After Anthropic's April 2026 pricing change, OpenClaw usage on third-party harnesses requires separate pay-as-you-go billing. Here are free and low-cost alternatives:
+
+### One-Command Ollama Setup
+
+```bash
+ollama launch openclaw --model gemma4
+```
+
+This installs OpenClaw, pulls the model, and starts the gateway. Pick your model:
+
+| Model | Size | Best For |
+|-------|------|----------|
+| `gemma4:e2b` | 7.2 GB | Edge devices, minimal RAM |
+| `gemma4:e4b` | 9.6 GB | Laptops, fast inference |
+| `gemma4:latest` | 9.6 GB | All-rounder, 128K context |
+| `gemma4:26b` | 18 GB | Strong reasoning (MoE) |
+| `gemma4:31b` | 20 GB | Maximum performance |
+| `qwen3` | 20 GB | Best local tool calling |
+| `deepseek-v3` | API | $0.27/M tokens |
+
+### Ollama-Ready Configs
+
+Every agent in this repo works with Ollama models. Set your model in SOUL.md:
+
+```yaml
+Model: ollama/gemma4
+```
+
+Or switch globally:
+
+```bash
+openclaw models set ollama/gemma4:e4b
+openclaw gateway restart
+```
+
+### Cost Comparison
+
+| Provider | Input Cost | Output Cost | Monthly (moderate) |
+|----------|-----------|-------------|-------------------|
+| Claude Sonnet (API) | $3.00/M | $15.00/M | ~$45-90 |
+| Claude Haiku (API) | $0.80/M | $4.00/M | ~$12-25 |
+| GPT-4o Mini | $0.15/M | $0.60/M | ~$5-10 |
+| DeepSeek V3 | $0.27/M | $1.10/M | ~$4-8 |
+| Ollama Cloud | Subscription | Subscription | ~$10-20 |
+| Ollama Local | Free | Free | $0 |
+
+> 📖 **Guides:** [Multi-Provider Strategy](https://crewclaw.com/blog/anthropic-openclaw-multi-provider-agents) · [Reduce Token Usage](https://crewclaw.com/blog/reduce-openclaw-token-usage) · [API Pricing Explained](https://crewclaw.com/blog/openclaw-api-pricing-2026) · [Ollama Cloud Switch](https://crewclaw.com/blog/ollama-cloud-openclaw-switch)
 
 ---
 

@@ -1,5 +1,5 @@
 {
-  "total": 184,
+  "total": 192,
   "agents": [
     {
       "id": "churn-predictor",
@@ -1495,6 +1495,46 @@
       "name": "Resume Optimizer",
       "role": "Resume and CV Optimization Agent",
       "path": "agents/hr/resume-optimizer/SOUL.md",
+      "deploy": "https://crewclaw.com/create-agent"
+    },
+    {
+      "id": "ollama-coding-assistant",
+      "category": "ollama",
+      "name": "Coding Assistant",
+      "role": "Senior Software Engineer (Ollama/Gemma4)",
+      "path": "configs/ollama/coding-assistant/SOUL.md",
+      "deploy": "https://crewclaw.com/create-agent"
+    },
+    {
+      "id": "ollama-content-writer",
+      "category": "ollama",
+      "name": "Content Writer",
+      "role": "Professional Content Writer (Ollama/Qwen3)",
+      "path": "configs/ollama/content-writer/SOUL.md",
+      "deploy": "https://crewclaw.com/create-agent"
+    },
+    {
+      "id": "ollama-research-analyst",
+      "category": "ollama",
+      "name": "Research Analyst",
+      "role": "Research & Analysis Specialist (Ollama/DeepSeek V3)",
+      "path": "configs/ollama/research-analyst/SOUL.md",
+      "deploy": "https://crewclaw.com/create-agent"
+    },
+    {
+      "id": "ollama-project-manager",
+      "category": "ollama",
+      "name": "Project Manager",
+      "role": "Technical Project Manager (Ollama/Gemma4:26b)",
+      "path": "configs/ollama/project-manager/SOUL.md",
+      "deploy": "https://crewclaw.com/create-agent"
+    },
+    {
+      "id": "ollama-customer-support",
+      "category": "ollama",
+      "name": "Customer Support",
+      "role": "Customer Support Agent (Ollama/Gemma4:e4b)",
+      "path": "configs/ollama/customer-support/SOUL.md",
       "deploy": "https://crewclaw.com/create-agent"
     }
   ]
